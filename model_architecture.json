@@ -1,0 +1,2901 @@
+{
+  "vocab_size": 152064,
+  "max_position_embeddings": 32768,
+  "hidden_size": 3584,
+  "intermediate_size": 18944,
+  "num_hidden_layers": 28,
+  "num_attention_heads": 28,
+  "use_sliding_window": false,
+  "sliding_window": null,
+  "max_window_layers": 28,
+  "num_key_value_heads": 4,
+  "hidden_act": "silu",
+  "initializer_range": 0.02,
+  "rms_norm_eps": 1e-06,
+  "use_cache": true,
+  "rope_theta": 1000000.0,
+  "rope_scaling": null,
+  "attention_dropout": 0.0,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "return_dict": true,
+  "output_hidden_states": false,
+  "torchscript": false,
+  "dtype": "bfloat16",
+  "pruned_heads": {},
+  "tie_word_embeddings": false,
+  "chunk_size_feed_forward": 0,
+  "is_encoder_decoder": false,
+  "is_decoder": false,
+  "cross_attention_hidden_size": null,
+  "add_cross_attention": false,
+  "tie_encoder_decoder": false,
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "task_specific_params": null,
+  "problem_type": null,
+  "tokenizer_class": null,
+  "prefix": null,
+  "bos_token_id": 151643,
+  "pad_token_id": null,
+  "eos_token_id": 151645,
+  "sep_token_id": null,
+  "decoder_start_token_id": null,
+  "max_length": 20,
+  "min_length": 0,
+  "do_sample": false,
+  "early_stopping": false,
+  "num_beams": 1,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "typical_p": 1.0,
+  "repetition_penalty": 1.0,
+  "length_penalty": 1.0,
+  "no_repeat_ngram_size": 0,
+  "encoder_no_repeat_ngram_size": 0,
+  "bad_words_ids": null,
+  "num_return_sequences": 1,
+  "output_scores": false,
+  "return_dict_in_generate": false,
+  "forced_bos_token_id": null,
+  "forced_eos_token_id": null,
+  "remove_invalid_values": false,
+  "exponential_decay_length_penalty": null,
+  "suppress_tokens": null,
+  "begin_suppress_tokens": null,
+  "num_beam_groups": 1,
+  "diversity_penalty": 0.0,
+  "_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
+  "transformers_version": "4.57.3",
+  "model_type": "qwen2",
+  "tf_legacy_loss": false,
+  "use_bfloat16": false,
+  "output_attentions": false,
+  "layer_by_layer_architecture": {
+    "embeddings": {
+      "token_embedding": {
+        "description": "Token/Word Embedding",
+        "weight_shape": [
+          152064,
+          3584
+        ],
+        "parameters": 544997376
+      },
+      "position_embedding": {
+        "description": "Position Embedding (RoPE)",
+        "max_positions": 32768,
+        "hidden_size": 3584,
+        "rope_theta": 1000000.0
+      }
+    },
+    "layers": [
+      {
+        "layer_index": 0,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 1,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 2,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 3,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 4,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 5,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 6,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 7,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 8,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 9,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 10,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 11,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 12,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 13,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 14,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 15,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 16,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 17,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 18,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 19,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 20,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 21,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 22,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 23,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 24,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 25,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 26,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      },
+      {
+        "layer_index": 27,
+        "layer_type": "full_attention",
+        "attention": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "query_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "key_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "value_projection": {
+            "weight_shape": [
+              3584,
+              512
+            ],
+            "bias": false,
+            "parameters": 1835008
+          },
+          "output_projection": {
+            "weight_shape": [
+              3584,
+              3584
+            ],
+            "bias": false,
+            "parameters": 12845056
+          },
+          "num_attention_heads": 28,
+          "num_key_value_heads": 4,
+          "head_dim": 128,
+          "attention_dropout": 0.0,
+          "total_parameters": 29360128
+        },
+        "feed_forward": {
+          "input_norm": {
+            "type": "RMSNorm",
+            "shape": [
+              3584
+            ],
+            "parameters": 3584
+          },
+          "gate_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "up_projection": {
+            "weight_shape": [
+              3584,
+              18944
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "down_projection": {
+            "weight_shape": [
+              18944,
+              3584
+            ],
+            "bias": false,
+            "parameters": 67895296
+          },
+          "activation": "silu",
+          "total_parameters": 135790592
+        },
+        "residual_connections": [
+          {
+            "from": "input",
+            "to": "attention_output",
+            "description": "Residual connection around attention"
+          },
+          {
+            "from": "attention_output",
+            "to": "ffn_output",
+            "description": "Residual connection around FFN"
+          }
+        ],
+        "total_parameters_per_layer": 165165056
+      }
+    ],
+    "output_norm": {
+      "type": "RMSNorm",
+      "shape": [
+        3584
+      ],
+      "parameters": 3584
+    },
+    "lm_head": {
+      "description": "Language Modeling Head",
+      "weight_shape": [
+        3584,
+        152064
+      ],
+      "parameters": 544997376,
+      "tied_embeddings": false
+    },
+    "parameter_summary": {
+      "embeddings": 544997376,
+      "layers": 4624621568,
+      "output_norm": 3584,
+      "lm_head": 544997376,
+      "total_parameters": 5714619904,
+      "total_parameters_billions": 5.714619904
+    }
+  }
+}
